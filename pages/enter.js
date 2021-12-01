@@ -4,7 +4,7 @@ import { UserContext } from '../lib/context'
 import debounce from "lodash.debounce";
 export default function Enter(props) {
   const { user, username } = useContext(UserContext)
-  console.log(username);
+  console.log(user);
     return (
       <main>
         {user ? (

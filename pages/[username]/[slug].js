@@ -14,8 +14,8 @@ export async function getStaticProps({ params }) {
   const { username, slug } = params;
   const userDoc = await getUserWithUsername(username);
 
-  let post;
-  let path;
+  let post = null;
+  let path = null;
 
   if (userDoc) {
     const postRef = userDoc.ref.collection("posts").doc(slug);

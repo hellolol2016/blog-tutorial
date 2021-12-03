@@ -80,9 +80,9 @@ function UsernameForm() {
    []
   );
   
-  const onSubmit = async (e) => {
-    e.preventDefault();
 
+  const onSubmit = async (e) => {
+   e.preventDefault();
     const userDoc = firestore.doc(`users/${user.uid}`)
     const usernameDoc = firestore.doc(`username/${formValue}`)
 
@@ -122,10 +122,10 @@ function UsernameForm() {
 }
 
 function UsernameMessage({ username, isValid, loading }) {
-  if (loading) {
-    return <p>Checking...</p>
-  } else if (isValid) {
-    return <p className="text-success">{username} is avaliable!</p>
+if (loading) {
+  return <p>Checking...</p>
+} else if (isValid) {
+  return <p className="text-success">{username} is avaliable!</p>
   } else if (username && !isValid) {
     return <p className="text-danger">That username is taken!</p>
   } else {
